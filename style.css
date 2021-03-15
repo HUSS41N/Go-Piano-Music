@@ -1,0 +1,121 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: sans-serif;
+	background-color: #1c3041;
+	color: #18f2b2;
+}
+.container header {
+	min-height: 30vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-size: 2.5rem;
+	text-align: center;
+}
+.container header p {
+	margin-top: 4rem;
+}
+.piano-container {
+	min-height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cord {
+	height: 400px;
+	width: 200px;
+	background-color: #18f2b2;
+	border: 2px solid #18f2b2;
+	/* border: 2px solid orange; */
+	margin: 2px;
+	transition: 0.2s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	color: #fff;
+	text-shadow: -1px -1px 0 orange, 1px -1px 0 orange, -1px 1px 0 orange,
+		1px 1px 0 orange;
+	cursor: pointer;
+
+}
+.cord:hover{
+	background-color: transparent;
+	border: 2px solid orange;
+	transition: 0.2s;
+	color: orange;
+}
+
+#box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 50px;
+	color: white;
+	font-size: 2.5rem;
+	margin-top: 4rem;
+}
+.gradient-border {
+	--borderWidth: 3px;
+	background: #1c3041;
+	position: relative;
+	border-radius: var(--borderWidth);
+}
+.gradient-border:after {
+	content: "";
+	position: absolute;
+	top: calc(-1 * var(--borderWidth));
+	left: calc(-1 * var(--borderWidth));
+	height: calc(100% + var(--borderWidth) * 2);
+	width: calc(100% + var(--borderWidth) * 2);
+	background: linear-gradient(
+		60deg,
+		#f79533,
+		#f37055,
+		#ef4e7b,
+		#a166ab,
+		#5073b8,
+		#1098ad,
+		#07b39b,
+		#6fba82
+	);
+	border-radius: calc(2 * var(--borderWidth));
+	z-index: -1;
+	animation: animatedgradient 3s ease alternate infinite;
+	background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.active{
+	background: linear-gradient(
+		60deg,
+		#f79533,
+		#f37055,
+		#ef4e7b,
+		#a166ab,
+		#5073b8,
+		#1098ad,
+		#07b39b,
+		#6fba82
+	);
+	border: none;
+}
