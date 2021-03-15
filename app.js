@@ -26,7 +26,6 @@ const pianoKeys = [
 
 cord.forEach((note, index) => {
 	note.addEventListener("click", () => {
-		box.style.visibility = "hidden";
 		playPiano(index);
 	});
 });
@@ -43,6 +42,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 playPiano = (i) => {
+	box.style.visibility = "hidden";
 	sound = sounds[i];
 	sound.currentTime = 0;
 	cord[i].classList.add("active");
